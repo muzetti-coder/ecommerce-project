@@ -1,0 +1,114 @@
+/* Definindo a fonte global como Poppins */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o Header fixo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1036dd;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Logo da empresa */
+.logo img {
+    height: 40px;
+}
+
+/* Menu de navegação (NavBar) */
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    position: relative; /* Para o submenu aparecer em relação ao item pai */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para o submenu (será mostrado ao passar o mouse) */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Submenu aparece logo abaixo do item de menu */
+    left: 0;
+    background-color: #527ecf;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.submenu li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar ul li:hover .submenu {
+    display: block; /* Exibir submenu ao passar o mouse */
+}
+
+/* Estilo para o nome do usuário e data no header */
+.user-info {
+    color: white;
+}
+
+/* Exibir nome do usuário e data atual */
+#username {
+    margin-right: 15px;
+}
+
+#current-date {
+    font-size: 0.9em;
+}
+
+/* Exibir Login/Logout */
+#logout {
+    display: block;
+}
+
+#login {
+    display: none;
+}
+
+/* Estilo da promoção/banner */
+.promotion-banner {
+    background-color: #f5a623;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 80px; /* Para não sobrepor o header fixo */
+}
+
+/* Estilo da imagem de destaque */
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Caixa de categorias de produtos */
+.category-boxes {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.category {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+}
