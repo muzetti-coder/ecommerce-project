@@ -1,0 +1,17 @@
+Trabalhe nas suas modificações: Agora, qualquer modificação que você faça no projeto, basta seguir os passos:
+
+git add . para adicionar os arquivos modificados.
+git commit -m "Mensagem do commit" para registrar a alteração.
+git push para enviar as alterações para o GitHub.
+Colaboradores (caso haja) podem clonar o repositório com o comando:
+
+bash
+
+git clone https://github.com/muzetti-coder/ecommerce-project.git
+
+cd /c/Users/Dev/Desktop/Ecommerce     # Navega até o diretório do projeto
+git init                              # Inicializa um repositório Git local
+git add .                             # Adiciona todos os arquivos ao Git
+git commit -m "Primeiro commit"       # Cria o primeiro commit
+git remote add origin https://github.com/muzetti-coder/ecommerce-project.git  # Conecta ao repositório remoto no GitHub
+git push -u origin master             # Envia os arquivos para o GitHub

@@ -3,6 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #f4f4f4;
 }
 
@@ -86,11 +87,24 @@ header {
 
 /* Estilo da promoção/banner */
 .promotion-banner {
-    background-color: #f5a623;
-    color: white;
+    background-color: #6b98eb;
+    color: rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
-    margin-top: 80px; /* Para não sobrepor o header fixo */
+    margin-top: 150px; /* Para não sobrepor o header fixo */
+}
+
+.btn-promo {
+    border-radius: 20px;
+    border: none;
+    height: 30px;
+    background-color: #527ecf;
+}
+
+.content {
+    text-align: center;
+    color: #1036dd;
+    background-color: azure;
 }
 
 /* Estilo da imagem de destaque */
