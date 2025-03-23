@@ -1,128 +1,123 @@
-/* Definindo a fonte global como Poppins */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
 }
 
-/* Estilo para o Header fixo */
+/* Define a fonte Poppins para toda a página */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o conteúdo ocupe no mínimo 100% da altura da tela */
+}
+
+/* Estilização do cabeçalho (header) */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1036dd;
-    padding: 10px 20px;
-    position: fixed;
+    position: fixed; /* Mantém o header fixo no topo */
     top: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-/* Logo da empresa */
-.logo img {
-    height: 40px;
-}
-
-/* Menu de navegação (NavBar) */
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-.navbar ul li {
-    margin-right: 20px;
-    position: relative; /* Para o submenu aparecer em relação ao item pai */
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Estilo para o submenu (será mostrado ao passar o mouse) */
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Submenu aparece logo abaixo do item de menu */
     left: 0;
-    background-color: #527ecf;
-    list-style: none;
-    padding: 10px 0;
-}
-
-.submenu li a {
-    color: white;
-    padding: 10px 20px;
-    display: block;
-}
-
-.navbar ul li:hover .submenu {
-    display: block; /* Exibir submenu ao passar o mouse */
-}
-
-/* Estilo para o nome do usuário e data no header */
-.user-info {
-    color: white;
-}
-
-/* Exibir nome do usuário e data atual */
-#username {
-    margin-right: 15px;
-}
-
-#current-date {
-    font-size: 0.9em;
-}
-
-/* Exibir Login/Logout */
-#logout {
-    display: block;
-}
-
-#login {
-    display: none;
-}
-
-/* Estilo da promoção/banner */
-.promotion-banner {
-    background-color: #6b98eb;
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    text-align: center;
-    margin-top: 150px; /* Para não sobrepor o header fixo */
-}
-
-.btn-promo {
-    border-radius: 20px;
-    border: none;
-    height: 30px;
-    background-color: #527ecf;
-}
-
-.content {
-    text-align: center;
-    color: #1036dd;
-    background-color: azure;
-}
-
-/* Estilo da imagem de destaque */
-.hero-image img {
     width: 100%;
-    height: auto;
-}
-
-/* Caixa de categorias de produtos */
-.category-boxes {
+    background-color: #5e31da;
+    color: white;
     display: flex;
-    justify-content: space-around;
-    padding: 20px 0;
+    justify-content: space-between; /* Alinha os itens nas extremidades */
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 2; /* Garante que o header fique acima de outros elementos */
 }
 
-.category {
-    background-color: #eee;
-    padding: 20px;
-    text-align: center;
-    width: 30%;
+/* Estilização da logo */
+.logo img {
+    height: 50px; /* Define o tamanho da logo */
 }
+
+/* Estilização da barra de navegação (navbar) */
+nav ul {
+    display: flex; /* Deixa os itens em linha */
+    list-style: none; /* Remove os marcadores de lista */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaçamento entre os itens */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white;
+    transition: color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Cor ao passar o mouse */
+}
+
+/* Ajusta a margem superior do conteúdo para compensar o header fixo */
+.content {
+    flex: 1;
+    padding-top: 80px; /* Espaço para não ficar atrás do header */
+}
+
+/* Estilização do rodapé (footer) */
+footer {
+    background-color: #5e31da;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens nos extremos */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    height: 15vh; /* Define a altura do footer em 25% da altura da página */
+}
+
+/* Links no rodapé */
+.footer-links a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    margin-right: 20px; /* Espaçamento entre os links */
+    transition: color 0.3s ease; /* Animação suave */
+}
+
+.footer-links a:hover {
+    color: #f39c12; /* Cor ao passar o mouse */
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+    transition: color 0.3s ease; /* Animação suave */
+}
+
+.social-icons a:hover {
+    color: #f39c12; /* Cor ao passar o mouse */
+}
+
+/* Responsividade: Ajusta para telas menores */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Ajusta o espaçamento vertical */
+    }
+
+    footer {
+        flex-direction: column; /* Deixa os itens em coluna */
+        text-align: center; /* Centraliza o conteúdo */
+        height: auto; /* Altura se ajusta ao conteúdo */
+    }
+
+    .social-icons {
+        justify-content: center; /* Centraliza os ícones */
+        margin-top: 15px;
+    }
+} /* Fim da mídia query */
