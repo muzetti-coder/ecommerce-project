@@ -1,123 +1,120 @@
-/* Reset de estilos para garantir consistência entre navegadores */
+/* Configuração global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define a fonte Poppins para toda a página */
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Garante que o conteúdo ocupe no mínimo 100% da altura da tela */
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+    overflow-x: hidden; /* Evitar que o conteúdo saia da tela */
 }
 
-/* Estilização do cabeçalho (header) */
+/* Header */
 header {
-    position: fixed; /* Mantém o header fixo no topo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre logo e navbar */
+    background-color: #007bff; /* Cor de fundo da navbar */
+    padding: 20px;
+    position: fixed; /* Fixa o cabeçalho no topo */
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #5e31da;
+    z-index: 1000; /* Garante que o header fique por cima do conteúdo */
+}
+
+.logo {
     color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.bike {
+    color: #082f5a; /* Cor azul para "BIKE" */
+}
+
+.navbar {
     display: flex;
-    justify-content: space-between; /* Alinha os itens nas extremidades */
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 2; /* Garante que o header fique acima de outros elementos */
+    gap: 20px;
 }
 
-/* Estilização da logo */
-.logo img {
-    height: 50px; /* Define o tamanho da logo */
-}
-
-/* Estilização da barra de navegação (navbar) */
-nav ul {
-    display: flex; /* Deixa os itens em linha */
-    list-style: none; /* Remove os marcadores de lista */
-}
-
-nav ul li {
-    margin: 0 15px; /* Espaçamento entre os itens */
-}
-
-nav ul li a {
-    text-decoration: none; /* Remove o sublinhado */
+nav a {
     color: white;
-    transition: color 0.3s ease; /* Animação suave ao passar o mouse */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
 }
 
-nav ul li a:hover {
-    color: #f39c12; /* Cor ao passar o mouse */
+nav a:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
 }
 
-/* Ajusta a margem superior do conteúdo para compensar o header fixo */
+/* Video de fundo */
 .content {
-    flex: 1;
-    padding-top: 80px; /* Espaço para não ficar atrás do header */
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px); /* Altura do vídeo ajustada, considerando o header fixo */
+    overflow: hidden;
 }
 
-/* Estilização do rodapé (footer) */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Transparência do vídeo (70%) */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Escurece o vídeo, se necessário */
+}
+
+/* Footer */
 footer {
-    background-color: #5e31da;
+    background-color: #007bff; /* Cor de fundo do footer */
     color: white;
-    padding: 20px;
+    padding: 30px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 15vh; /* Altura do footer (15% da altura da página) */
     display: flex;
-    justify-content: space-between; /* Alinha os itens nos extremos */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    height: 15vh; /* Define a altura do footer em 25% da altura da página */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Links no rodapé */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+}
+
 .footer-links a {
     color: white;
-    text-decoration: none; /* Remove o sublinhado */
-    margin-right: 20px; /* Espaçamento entre os links */
-    transition: color 0.3s ease; /* Animação suave */
+    text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: #f39c12; /* Cor ao passar o mouse */
+    text-decoration: underline;
 }
-
-/* Ícones de redes sociais */
-.social-icons {
-    display: flex;
-}
-
-.social-icons a {
-    color: white;
-    margin-right: 15px; /* Espaçamento entre os ícones */
-    font-size: 24px; /* Tamanho dos ícones */
-    transition: color 0.3s ease; /* Animação suave */
-}
-
-.social-icons a:hover {
-    color: #f39c12; /* Cor ao passar o mouse */
-}
-
-/* Responsividade: Ajusta para telas menores */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Empilha os itens verticalmente */
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Ajusta o espaçamento vertical */
-    }
-
-    footer {
-        flex-direction: column; /* Deixa os itens em coluna */
-        text-align: center; /* Centraliza o conteúdo */
-        height: auto; /* Altura se ajusta ao conteúdo */
-    }
-
-    .social-icons {
-        justify-content: center; /* Centraliza os ícones */
-        margin-top: 15px;
-    }
-} /* Fim da mídia query */
